@@ -21,19 +21,37 @@ class Book {
 }
 
 //Store books in local storage
-// localStorage.removeItem('bookStore','${myLibrary}')
-
-const addBookToStorage = () => {
-
-    return  localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
-}
-
-//get book from local storage
-function getBook(){
-   
-}
-
-
+// localStorage.removeItem('books','${books}')
+class Store {
+    static getBooks() {
+      let books;
+      if(localStorage.getItem('books') === null) {
+        books = [];
+      } else {
+        books = JSON.parse(localStorage.getItem('books'));
+      }
+  
+      return books;
+    }
+  
+    static addBook(book) {
+      const books = Store.getBooks();
+      books.push(book);
+      localStorage.setItem('books', JSON.stringify(books));
+    }
+  
+    // static removeBook(isbn) {
+    //   const books = Store.getBooks();
+  
+    //   books.forEach((book, index) => {
+    //     if(book.isbn === isbn) {
+    //       books.splice(index, 1);
+    //     }
+    //   });
+  
+    //   localStorage.setItem('books', JSON.stringify(books));
+    // }
+  }
 
 const addBookToLibrary = () => {
 
@@ -43,10 +61,10 @@ const addBookToLibrary = () => {
     const pagesEl = document.querySelector('#pages').value.trim();
 
     let addNewBook = function(authorEl, titleEl, pagesEl){
-        const bookN = new Book(authorEl, titleEl, pagesEl);
-        myLibrary.push(bookN);
-        addBookToStorage(bookN);
-        createDisplayCard(bookN);
+        const book = new Book(authorEl, titleEl, pagesEl);
+        myLibrary.push(book);
+        createDisplayCard(book);
+        Store.addBook(book);
     }
     addNewBook(authorEl, titleEl, pagesEl); 
     
@@ -63,7 +81,7 @@ const clearInputFields = () =>{
 
 //display books to the windows UI
 const displayBooks = () => {
-    const books = myLibrary;
+    const books = Store.getBooks();
     books.forEach((book) => {
 
         createDisplayCard(book);
@@ -109,7 +127,6 @@ const createDisplayCard = (book) => {
 document.querySelector('.book-form').addEventListener('submit',(e) => {
     e.preventDefault();
     addBookToLibrary();
-    
     clearInputFields();
 });
 
