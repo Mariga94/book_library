@@ -1,0 +1,169 @@
+*{
+    box-sizing: border-box;
+
+}
+
+body{
+    font-family: sans-serif;
+    display: block;
+}
+
+h1,.text{
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: beige;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.container{
+   width: 50%;
+   border: 2px solid gray;
+   padding: 1em;
+   border-radius: 4px;
+   margin-left: auto;
+   margin-right: auto;
+   display: none;
+   
+}
+
+.book-form{
+    width: 100%;
+
+}
+
+.form-field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 9px 5px;
+    
+}
+
+input{
+    padding: 10px 5px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+label{
+    padding:0 0 5px 0;
+    font-weight: 500;
+}
+
+#submit{
+    padding: 15px 5px;
+    background-color: rgb(19, 192, 235);
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    transition-duration: 0.4s;
+    opacity: 0.7;
+    border-radius: 4px;
+    border: none;
+    cursor:pointer;
+}
+.btn{
+    padding: 15px 5px;
+    background-color: rgb(19, 192, 235);
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    transition-duration: 0.4s;
+    opacity: 0.7;
+    border-radius: 4px;
+    border: none;
+    cursor:pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button,#submit,.btn:hover{
+    opacity: 1;
+}
+
+.btn-close{
+    transition-duration: 0.4s;
+    opacity: 0.7;
+    border-radius: 4px;
+    border: none;
+    cursor:pointer;
+    display: block;
+    float: right;
+    padding: 9px;
+    background-color: rgb(235, 19, 19);
+    color: #fff;
+}
+
+.table{
+   
+
+}
+
+.card-container:hover {
+    background: #fff;
+  box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    margin-left: auto;
+    background: #F7F7F7;
+    padding: 10px 10px 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 75%;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+    border-radius: 5px;
+    border: 1px solid rgb(192, 191, 191);
+    cursor: pointer;
+
+    -webkit-transition:all .9s ease; 
+    -moz-transition:all .9s ease; 
+    -o-transition:all .9s ease;
+    -ms-transition:all .9s ease;
+  }
+
+  h6{
+    margin-top: 0px;
+    margin-bottom: 4px; 
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto Black', sans-serif;
+    letter-spacing: 1px;
+    color: #00acc1;
+  }
+
+  .card-container > p{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 0px; 
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #000000;
+  }
+
+  .book-image{
+      width: 120px;
+      height: 100px;
+      padding-right: 20px;
+      background: #F7F7F7;
+
+  }
+
+ 
+
+
+
