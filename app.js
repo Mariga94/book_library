@@ -40,17 +40,17 @@ class Store {
       localStorage.setItem('books', JSON.stringify(books));
     }
   
-    // static removeBook(isbn) {
-    //   const books = Store.getBooks();
+    static removeBook(title) {
+      const books = Store.getBooks();
   
-    //   books.forEach((book, index) => {
-    //     if(book.isbn === isbn) {
-    //       books.splice(index, 1);
-    //     }
-    //   });
+      books.forEach((book, index) => {
+        if(book.title === title) {
+          books.splice(index, 1);
+        }
+      });
   
-    //   localStorage.setItem('books', JSON.stringify(books));
-    // }
+      localStorage.setItem('books', JSON.stringify(books));
+    }
   }
 
 const addBookToLibrary = () => {
@@ -93,7 +93,7 @@ const displayBooks = () => {
 const createDisplayCard = (book) => {
     const table = document.querySelector('.table');
     const card = document.createElement('div');
-    card.classList = 'card-container','card-item';
+    card.classList.add('card-container');
 
     const imageDiv =document.createElement('div')
     imageDiv.classList.add('image-div')
@@ -102,6 +102,17 @@ const createDisplayCard = (book) => {
     image.src = " https://i.pinimg.com/originals/bd/7c/97/bd7c978f921e87f2f09afd238fa4650a.png";
     
     const textDiv = document.createElement('div');
+    const btnDiv = document.createElement('div');
+    btnDiv.className = 'button-btn';
+
+    const readBtn = document.createElement('button');
+    readBtn.classList = ' read', 'not-read';
+    readBtn.textContent = 'read';
+
+    const deleteBtn= document.createElement('button');
+    deleteBtn.className = 'delete-btn';
+    deleteBtn.textContent = `Delete`;
+
     
     const title1= document.createElement('h6');
     title1.className = 'card-title';
@@ -115,9 +126,11 @@ const createDisplayCard = (book) => {
     pages1.className = 'card=pages';
     pages1.textContent = `Book pages: ${book.pages}`;
 
+   
     imageDiv.appendChild(image);
+    btnDiv.innerHTML += readBtn.outerHTML+ deleteBtn.outerHTML;
     textDiv.innerHTML += title1.outerHTML + author1.outerHTML + pages1.outerHTML;
-    card.innerHTML += imageDiv.outerHTML +textDiv.outerHTML;
+    card.innerHTML += imageDiv.outerHTML +textDiv.outerHTML + btnDiv.outerHTML;
 
     table.appendChild(card);
 
@@ -148,6 +161,11 @@ newBook.addEventListener('click',() =>{
     closeBtn.addEventListener('click',() => {
         container.style.display = 'none';
         console.log('close-pop-up')
+    })
+
+    document.querySelector('.delete-btn').addEventListener('click',() => {
+        console.log('pressed');
+        Store.removeBook();
     })
     
 

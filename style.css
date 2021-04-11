@@ -89,6 +89,7 @@ button,#submit,.btn:hover{
 .btn-close{
     transition-duration: 0.4s;
     opacity: 0.7;
+    margin:5px;
     border-radius: 4px;
     border: none;
     cursor:pointer;
@@ -97,11 +98,6 @@ button,#submit,.btn:hover{
     padding: 9px;
     background-color: rgb(235, 19, 19);
     color: #fff;
-}
-
-.table{
-   
-
 }
 
 .card-container:hover {
@@ -114,9 +110,8 @@ button,#submit,.btn:hover{
   transition: all 0.2s ease-in;
   }
 
-  .card-container {
+.card-container {
     display: flex;
-    flex-direction: row;
     margin-right: auto;
     margin-left: auto;
     background: #F7F7F7;
@@ -128,11 +123,25 @@ button,#submit,.btn:hover{
     border-radius: 5px;
     border: 1px solid rgb(192, 191, 191);
     cursor: pointer;
-
     -webkit-transition:all .9s ease; 
     -moz-transition:all .9s ease; 
     -o-transition:all .9s ease;
     -ms-transition:all .9s ease;
+  }
+
+  .card-container .button-btn:last-child{
+     
+      margin-left: auto;
+  }
+
+  .button-btn{
+    width: 75px;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 10px;
+
+    
   }
 
   h6{
@@ -144,6 +153,7 @@ button,#submit,.btn:hover{
     font-family: 'Roboto Black', sans-serif;
     letter-spacing: 1px;
     color: #00acc1;
+    /* border: 1px solid rgb(192, 191, 191); */
   }
 
   .card-container > p{
@@ -153,6 +163,7 @@ button,#submit,.btn:hover{
     font-size: 14px;
     letter-spacing: 1px;
     color: #000000;
+    
   }
 
   .book-image{
@@ -160,9 +171,53 @@ button,#submit,.btn:hover{
       height: 100px;
       padding-right: 20px;
       background: #F7F7F7;
+      /* border: 1px solid rgb(192, 191, 191); */
 
   }
 
+  .delete-btn{
+    background-color: #f44336;
+    border:none;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    transition-duration: 0.4s;
+    opacity: 0.7;
+    border-radius: 4px;
+    border: none;
+    cursor:pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+  }
+  .delete-btn:hover{
+    opacity: 1;
+}
+
+
+  .read{
+    background-color: #008CBA;
+    border:none;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    transition-duration: 0.4s;
+    opacity: 0.7;
+    border-radius: 4px;
+    border: none;
+    cursor:pointer;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  
+  
  
 
 
